@@ -1,13 +1,13 @@
 import { FC } from 'react'
 
 import { Products } from '@/components/pages/products/products'
-import { useGetCards } from '@/hooks/useGetCards.ts'
+import { useGetProducts } from '@/hooks/useGetProducts.ts'
 
 export const ProductsPage: FC = () => {
-  const { data, isLoading, isError } = useGetCards()
+  const { data, isLoading, isError, error } = useGetProducts()
 
   if (isLoading) return <>Loading...</>
-  if (isError) return <>Some error...</>
+  if (isError) return <>{error?.toString()}</>
   if (!data) return <>Not found</>
 
   return (

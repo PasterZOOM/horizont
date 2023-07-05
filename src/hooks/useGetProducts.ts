@@ -5,10 +5,10 @@ import { productsApi } from '@/api/products/productsApi.ts'
 import { GetProductParamsType, ProductType } from '@/api/products/types.ts'
 import { QUERY_KEY } from '@/enums/queryKeys.ts'
 
-export const useGetCards: UseQueryHook<
+export const useGetProducts: UseQueryHook<
   ProductType[],
   unknown,
-  [QUERY_KEY.GET_CARDS, URLSearchParams]
+  [QUERY_KEY.GET_PRODUCTS, URLSearchParams]
 > = options => {
   const [query] = useSearchParams()
 
@@ -18,7 +18,7 @@ export const useGetCards: UseQueryHook<
   }
 
   return useQuery({
-    queryKey: [QUERY_KEY.GET_CARDS, query],
+    queryKey: [QUERY_KEY.GET_PRODUCTS, query],
     queryFn: () => productsApi.getProducts(params),
     ...options,
   })

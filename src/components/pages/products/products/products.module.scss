@@ -5,6 +5,13 @@
 
   max-width: 80rem;
   margin: 0 auto;
-  padding: 1rem;
-}
+  padding: 3rem;
 
+  @media screen and (width < 1024px) {
+    padding: 2rem;
+  }
+
+  @media screen and (width < 756px) {
+    padding: 1rem;
+  }
+}

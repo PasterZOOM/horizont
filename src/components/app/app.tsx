@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { QueryClient, QueryClientProvider } from 'react-query'
 
-import { ProductsPage } from '@/components/pages/products/productsPage.tsx'
+import { ProductsPage } from '@/components/pages/products'
 
 export const App = () => {
   const [queryClient] = useState(
@@ -15,6 +15,7 @@ export const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <ProductsPage />
+      <div id="modals" />
     </QueryClientProvider>
   )
 }

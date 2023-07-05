@@ -12,11 +12,8 @@ type PropsType = {
 export const Products: FC<PropsType> = ({ products }) => {
   return (
     <div className={style.container}>
-      {products.map(el => (
-        <Card
-          key={el.id}
-          item={{ title: el.title, description: el.description, image: el.image }}
-        />
+      {products.map(product => (
+        <Card key={product.id} product={product} />
       ))}
     </div>
   )

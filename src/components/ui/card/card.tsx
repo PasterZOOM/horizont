@@ -1,20 +1,26 @@
 import { FC, memo } from 'react'
 
-import styles from './card.module.scss'
+import style from './card.module.scss'
 
-type ItemType = {
-  title: string
-  description: string
-  image: string
-}
+import { ProductType } from '@/api/products/types.ts'
+import { DetailsModal } from '@/components/pages/products/detailModal'
+import { useModal } from '@/hooks/useModal.ts'
+
 type PropsType = {
-  item: ItemType
+  product: ProductType
 }
 
-const Card: FC<PropsType> = ({ item }) => {
+const Card: FC<PropsType> = ({ product }) => {
+  const { isOpen, openModal, closeModal } = useModal()
+
   return (
-    <div className={styles.main}>
-      <div className={styles.image} style={{ backgroundImage: `url(${item.image})` }}></div>
+    <div className={style.main}>
+      <div
+        onClick={openModal}
+        className={style.image}
+        style={{ backgroundImage: `url(${product.image})` }}
+      />
+      <DetailsModal product={product} isOpen={isOpen} closeModal={closeModal} />
     </div>
   )
 }
