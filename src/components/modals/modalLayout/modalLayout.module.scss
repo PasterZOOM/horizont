@@ -7,8 +7,10 @@
 
 .closeButton {
   position: absolute;
+  z-index: 60;
   top: 1rem;
   right: 1rem;
+
   color: var(--color-dark-900);
 
   &:hover {

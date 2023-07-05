@@ -1,9 +1,10 @@
 import { FC } from 'react'
 
-import style from './detailsModal.module.scss'
+import styles from './detailsModal.module.scss'
 
 import { ProductType } from '@/api/products/types.ts'
 import { ModalLayout } from '@/components/modals/modalLayout'
+import { FavoriteStare } from '@/components/ui/favoriteStare'
 import { Typography } from '@/components/ui/typography'
 import { useWindowSize } from '@/hooks/useWindowSize.ts'
 
@@ -18,14 +19,15 @@ export const DetailsModal: FC<PropsType> = ({ isOpen, closeModal, product }) => 
 
   return (
     <ModalLayout isOpen={isOpen} closeModal={closeModal}>
-      <div className={style.body}>
+      <div className={styles.body}>
+        <FavoriteStare item={product} className={styles.star} />
         <div>
           <img src={product.image} alt={product.description} width={isMobile ? 200 : 300} />
         </div>
-        <Typography variant={'h2'} className={style.title}>
+        <Typography variant={'h2'} className={styles.title}>
           {product.title}
         </Typography>
-        <Typography variant={'body'} className={style.description}>
+        <Typography variant={'body'} className={styles.description}>
           {product.description}
         </Typography>
       </div>
