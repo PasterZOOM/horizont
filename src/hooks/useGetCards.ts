@@ -1,9 +1,9 @@
 import { QueryKey, useQuery, UseQueryOptions, UseQueryResult } from 'react-query'
 import { useSearchParams } from 'react-router-dom'
 
-import { productsApi } from '../api/products/productsApi.ts'
-import { GetProductParamsType, ProductType } from '../api/products/types.ts'
-import { QUERY_KEY } from '../enums/queryKeys.ts'
+import { productsApi } from '@/api/products/productsApi.ts'
+import { GetProductParamsType, ProductType } from '@/api/products/types.ts'
+import { QUERY_KEY } from '@/enums/queryKeys.ts'
 
 export const useGetCards: UseQueryHook<
   ProductType[],
@@ -13,7 +13,7 @@ export const useGetCards: UseQueryHook<
   const [query] = useSearchParams()
 
   const params: GetProductParamsType = {
-    limit: query.get('limit') || '5',
+    limit: query.get('limit') || '12',
     sort: query.get('sort') as PRODUCT_SORT,
   }
 
