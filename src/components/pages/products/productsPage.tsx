@@ -1,7 +1,8 @@
 import { FC } from 'react'
 
+import { Filters } from '@/components/pages/products/filters'
 import { Products } from '@/components/pages/products/products'
-import { useGetProducts } from '@/hooks/useGetProducts.ts'
+import { useGetProducts } from '@/hooks/query/useGetProducts.ts'
 
 export const ProductsPage: FC = () => {
   const { data, isLoading, isError, error } = useGetProducts()
@@ -12,6 +13,7 @@ export const ProductsPage: FC = () => {
 
   return (
     <>
+      <Filters />
       <Products products={data} />
     </>
   )

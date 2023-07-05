@@ -10,4 +10,5 @@ export type ProductType = {
 export type GetProductParamsType = {
   limit: string | null
   sort: PRODUCT_SORT | null
+  categories: string | null
 }

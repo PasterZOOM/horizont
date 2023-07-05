@@ -1,0 +1,15 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+
+  margin-top: 2rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  @media screen and (width <= 756px) {
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+}
