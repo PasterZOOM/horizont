@@ -3,18 +3,17 @@ import { FC } from 'react'
 import { Filters } from '@/components/pages/products/filters'
 import { Products } from '@/components/pages/products/products'
 import { useGetProducts } from '@/hooks/query/useGetProducts.ts'
+import { productsMock } from '@/mocks/products.ts'
 
 export const ProductsPage: FC = () => {
-  const { data, isLoading, isError, error } = useGetProducts()
+  const { data, isLoading } = useGetProducts()
 
   if (isLoading) return <>Loading...</>
-  if (isError) return <>{error?.toString()}</>
-  if (!data) return <>Not found</>
 
   return (
     <>
       <Filters />
-      <Products products={data} />
+      <Products products={data ?? productsMock} />
     </>
   )
 }

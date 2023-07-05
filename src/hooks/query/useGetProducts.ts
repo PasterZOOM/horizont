@@ -14,7 +14,7 @@ export const useGetProducts: UseQueryHook<
   const [query] = useSearchParams()
 
   const params: GetProductParamsType = {
-    limit: query.get('limit') || '12',
+    limit: query.get('limit'),
     sort: query.get('sort') as PRODUCT_SORT,
     categories: query.get('categories'),
   }
