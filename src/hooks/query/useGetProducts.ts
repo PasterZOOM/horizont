@@ -9,7 +9,7 @@ import { UseQueryHook } from '@/hooks/query/types.ts'
 export const useGetProducts: UseQueryHook<
   ProductType[],
   unknown,
-  [QUERY_KEY.GET_PRODUCTS, URLSearchParams]
+  [QUERY_KEY.GET_PRODUCTS]
 > = options => {
   const [query] = useSearchParams()
 
@@ -20,7 +20,7 @@ export const useGetProducts: UseQueryHook<
   }
 
   return useQuery({
-    queryKey: [QUERY_KEY.GET_PRODUCTS, query],
+    queryKey: [QUERY_KEY.GET_PRODUCTS],
     queryFn: () => productsApi.getProducts(params),
     ...options,
   })

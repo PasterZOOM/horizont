@@ -12,6 +12,7 @@ import { ControlTextField } from '@/components/form/controls/controlTextField.ts
 import { Comments } from '@/components/pages/product/comments'
 import { Button } from '@/components/ui/button'
 import { FavoriteIcon } from '@/components/ui/favoriteStare'
+import { Loader } from '@/components/ui/loader'
 import { Typography } from '@/components/ui/typography'
 import { useGetProduct } from '@/hooks/query/useGetProduct.ts'
 import { selectAddComment, useCommentsStore } from '@/store/useCommentsStore.ts'
@@ -27,7 +28,7 @@ const schema = z.object({
 type LoginFormType = z.infer<typeof schema>
 export const ProductPage: FC = () => {
   const { id } = useParams()
-  const { data, isLoading } = useGetProduct({ keepPreviousData: false })
+  const { data, isLoading } = useGetProduct()
   const navigate = useNavigate()
 
   const addComment = useCommentsStore(selectAddComment)
@@ -45,7 +46,7 @@ export const ProductPage: FC = () => {
     window.scrollTo(0, 0)
   }, [])
 
-  if (isLoading) return <>Loading...</>
+  if (isLoading) return <Loader />
 
   return (
     <div className={styles.container}>

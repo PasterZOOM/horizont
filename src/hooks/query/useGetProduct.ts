@@ -9,12 +9,12 @@ import { UseQueryHook } from '@/hooks/query/types.ts'
 export const useGetProduct: UseQueryHook<
   ProductType,
   unknown,
-  [QUERY_KEY.GET_PRODUCT]
+  [QUERY_KEY.GET_PRODUCT, string]
 > = options => {
   const { id } = useParams()
 
   return useQuery({
-    queryKey: [QUERY_KEY.GET_PRODUCT],
+    queryKey: [QUERY_KEY.GET_PRODUCT, id as string],
     queryFn: () => productsApi.getProduct(id!),
     ...options,
   })
