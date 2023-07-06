@@ -1,0 +1,21 @@
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  width: 100%;
+  max-width: 44rem;
+  padding: 2rem;
+}
+
+.noComments {
+  display: flex;
+  justify-content: center;
+  color: var(--color-light-900);
+}
+
+@media screen and (width <= 756px) {
+  .comments {
+    padding: 1.5rem;
+  }
+}

@@ -10,21 +10,21 @@ import {
   selectAddFavorite,
   selectIsFavorite,
   selectRemoveFavorite,
-  useFavoriteStore,
-} from '@/store/useFavoritVacanciesStore.ts'
+  useFavoritesStore,
+} from '@/store/useFavoritsStore.ts'
 
 type PropsType = {
   item: ProductType
   className?: string
 }
 
-export const FavoriteStare: FC<PropsType> = ({ item, className }) => {
+export const FavoriteIcon: FC<PropsType> = ({ item, className }) => {
   const ref = useRef<HTMLInputElement>(null)
 
-  const addVacancy = useFavoriteStore(selectAddFavorite)
-  const removeVacancy = useFavoriteStore(selectRemoveFavorite)
+  const addVacancy = useFavoritesStore(selectAddFavorite)
+  const removeVacancy = useFavoritesStore(selectRemoveFavorite)
 
-  const inFavorite = useFavoriteStore(selectIsFavorite(item.id))
+  const inFavorite = useFavoritesStore(selectIsFavorite(item.id))
 
   const onKeyStar = (e: ChangeEvent | MouseEvent | KeyboardEvent): void => {
     if (ref.current) {

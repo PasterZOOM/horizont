@@ -21,11 +21,11 @@
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
 
   &:hover {
-    color: var(--color-info-300);
+    color: var(--color-primary-300);
   }
 }
 
 .favorite {
-  color: var(--color-info-500);
-  fill: var(--color-info-500);
+  color: var(--color-primary-500);
+  fill: var(--color-primary-500);
 }

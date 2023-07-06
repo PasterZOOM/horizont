@@ -1,0 +1,26 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.label {
+  color: var(--color-dark-100);
+}
+
+.area {
+  resize: none;
+
+  width: 100%;
+  padding: 0.5rem;
+
+  border-radius: 0.25rem;
+  outline-color: var(--color-primary-500);
+}
+
+.errorMessage {
+  position: absolute;
+  bottom: -1.5rem;
+  color: var(--color-danger-500);
+}

@@ -1,0 +1,107 @@
+.container {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.backButton {
+  cursor: pointer;
+
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+
+  background: none;
+  border: none;
+
+  &:hover {
+    color: var(--color-primary-500);
+  }
+}
+
+.title,
+.description {
+  max-width: 44rem;
+  padding: 2rem 2rem 0;
+  text-align: center;
+}
+
+.card {
+  user-select: none;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 2.5rem 2.5rem 1rem;
+
+  .favoriteIcon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  img {
+    width: 25rem;
+  }
+}
+
+.form {
+  display: flex;
+  gap: 1rem;
+  align-items: end;
+
+  width: 100%;
+  max-width: 44rem;
+  margin-bottom: 2rem;
+  padding: 0 2rem;
+
+  .textField {
+    width: 500px;
+  }
+
+  .addButton {
+    width: fit-content;
+  }
+}
+
+@media screen and (width <= 756px) {
+  .backButton {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .title {
+    padding: 3rem 0 0;
+  }
+
+  .description {
+    padding: 1rem 0 0;
+  }
+
+  .card {
+    padding: 1.5rem 1.5rem 0.5rem;
+
+    .favoriteIcon {
+      top: 0.5rem;
+      right: 0.5rem;
+    }
+
+    img {
+      width: 15rem;
+    }
+  }
+
+  .form {
+    flex-direction: column;
+    margin-bottom: 1rem;
+    padding: 0 1.5rem;
+  }
+}

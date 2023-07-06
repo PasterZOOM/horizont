@@ -1,6 +1,8 @@
 @mixin typography($fs, $lh, $fw: var(--font-weight-regular)) {
   cursor: default;
 
+  margin: 0;
+
   font-size: $fs;
   font-weight: $fw;
   line-height: $lh;
@@ -9,7 +11,7 @@
 }
 
 @mixin link {
-  color: var(--color-info-500);
+  color: var(--color-primary-500);
   text-decoration: underline;
 }
 
@@ -29,20 +31,12 @@
   @include typography(var(--font-size-m), var(--line-height-m), var(--font-weight-bold));
 }
 
-.body1 {
+.body {
   @include typography(var(--font-size-m), var(--line-height-m));
 }
 
-.subtitle1 {
+.subtitle {
   @include typography(var(--font-size-m), var(--line-height-m), var(--font-weight-bold));
-}
-
-.body2 {
-  @include typography(var(--font-size-s), var(--line-height-m));
-}
-
-.subtitle2 {
-  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-bold));
 }
 
 .caption {
@@ -53,26 +47,21 @@
   @include typography(var(--font-size-xs), var(--line-height-s), var(--font-weight-bold));
 }
 
-.link1 {
+.link {
   @include typography(var(--font-size-s), var(--line-height-m));
   @include link;
 }
 
-.link2 {
-  @include typography(var(--font-size-xs), var(--line-height-s));
-  @include link;
-}
-
 .primary {
-  color: blue;
+  color: var(--color-primary-500);
 }
 
 .secondary {
-  color: green;
+  color: var(--color-success-500);
 }
 
 .error {
-  color: red;
+  color: var(--color-danger-500);
 }
 
 .inherit {

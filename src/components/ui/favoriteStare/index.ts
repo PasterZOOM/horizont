@@ -1,1 +1,1 @@
-export * from './favoriteStare.tsx'
+export * from './favoriteIcon.tsx'

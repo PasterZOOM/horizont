@@ -9,13 +9,15 @@
   justify-content: center;
 
   background-color: transparentize(#000, 0.5);
-
-  @media screen and (width <= 756px) and (height <= 756px) {
-    align-items: start;
-    padding: 0.5rem 0;
-  }
 }
 
 .small {
   align-items: start;
+}
+
+@media screen and (width <= 756px) and (height <= 756px) {
+  .overlay {
+    align-items: start;
+    padding: 0.5rem 0;
+  }
 }

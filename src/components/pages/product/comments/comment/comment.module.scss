@@ -1,0 +1,39 @@
+.remove {
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.comment {
+  width: 100%;
+
+  &:hover .remove {
+    opacity: 1;
+    transition: 0.3s;
+  }
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.userName {
+  color: var(--color-primary-500);
+}
+
+.text {
+  word-wrap: break-word;
+}
+
+.date {
+  display: flex;
+  justify-content: right;
+  opacity: 0.5;
+}
+
+@media screen and (width <= 756px) {
+  .remove {
+    opacity: 1;
+  }
+}

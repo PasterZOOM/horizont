@@ -23,10 +23,10 @@ export const Filters: FC = () => {
 
   return (
     <div className={style.main}>
-      {data && data.map(category => <CategoryButton key={category.id} category={category} />)}
       <Button fullWidth={width < 450} onClick={clear}>
-        Clear all
+        ALL
       </Button>
+      {data && data.map(category => <CategoryButton key={category.id} category={category} />)}
     </div>
   )
 }
